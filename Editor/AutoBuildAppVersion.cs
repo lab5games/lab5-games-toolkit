@@ -75,7 +75,7 @@ namespace Lab5Games.Editor
                 "TortoiseProc.exe",
                 "/command:update /path:" +
                 Path.Combine(Environment.CurrentDirectory, "ProjectSettings") +
-                "/closeonend:0");
+                " /closeonend:0");
 
             // commit untiy ProjectSettings folder
             UnityEngine.Debug.Log("[AutoBuildAppVersion] Svn commit...");
@@ -84,7 +84,7 @@ namespace Lab5Games.Editor
                 "TortoiseProc.exe",
                 "/command:commit /path:" +
                 Path.Combine(Environment.CurrentDirectory, "ProjectSettings") +
-                "/closeonend:0");
+                " /closeonend:0");
         }
 
         void GitVersionControl()
