@@ -1,6 +1,9 @@
 {
   "name": "com.lab5games.lab5-games-toolkit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "Lab5 Games Toolkit",
-  "unity": "2021.3"
+  "unity": "2021.3",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  }
 }
