@@ -10,7 +10,7 @@ namespace Lab5Games.Editor
         public static AppVersion GetCurrentVersion()
         {
             string bundleVer = PlayerSettings.bundleVersion;
-            Debug.Log($"1:{bundleVer}");
+            //Debug.Log($"1:{bundleVer}");
 
             string[] arrVer = bundleVer.Split('.');
 
@@ -31,10 +31,10 @@ namespace Lab5Games.Editor
         public static AppVersion BuildNewVersion()
         {
             AppVersion appVer = GetCurrentVersion();
-            Debug.Log($"2:{appVer}");
+            //Debug.Log($"2:{appVer}");
 
             appVer.build++;
-            Debug.Log($"3:{appVer}");
+            //Debug.Log($"3:{appVer}");
 
             SetNewVersion(appVer);
 
