@@ -39,27 +39,27 @@ namespace Lab5Games.Editor
 
         public static void Update(string path)
         {
-            Debug.LogWarning("[SvnControl] Updat...");
-
             Process.Start(
                 "TortoiseProc.exe",
                 "/command:update /path:\"" + path + "\"" +
                 " /closeonend:1");
 
             AssetDatabase.Refresh();
+
+            Debug.LogWarning("[SvnControl] Finished update");
         }
 
         public static void Commit(string path)
         {
-            Debug.LogWarning("[SvnControl] Commit...");
-
-            AppVersionBuilder.BuildNewVersion();
+            AppVersion appVer = AppVersionBuilder.BuildNewVersion();
 
             Process.Start(
                 "TortoiseProc.exe",
                 "/command:commit /path:\"" + path + "\"" +
-                " /logmsg \"auto svn commit: " + AppVersionBuilder.GetCurrentVersion() + "\"" +
+                " /logmsg \"auto svn commit: " + appVer + "\"" +
                 " /closeonend:1");
+
+            Debug.LogWarning("[SvnControl] Finished Commit");
         }
 
         public static void SafeCommit(string path)
