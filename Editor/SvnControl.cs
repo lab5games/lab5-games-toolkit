@@ -45,6 +45,8 @@ namespace Lab5Games.Editor
                 "TortoiseProc.exe",
                 "/command:update /path:\"" + path + "\"" +
                 " /closeonend:1");
+
+            AssetDatabase.Refresh();
         }
 
         public static void Commit(string path)

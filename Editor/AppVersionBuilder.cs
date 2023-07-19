@@ -33,11 +33,13 @@ namespace Lab5Games.Editor
             return appVer;
         }
 
-        static void SetNewVersion(AppVersion appVer)
+        public static void SetNewVersion(AppVersion appVer)
         {
             PlayerSettings.bundleVersion = appVer.ToString();
             PlayerSettings.iOS.buildNumber = appVer.build.ToString();
             PlayerSettings.Android.bundleVersionCode = appVer.build;
+
+            AssetDatabase.SaveAssets();
 
             Debug.Log($"[AppVersionBuilder] Set new version({appVer})");
         }
