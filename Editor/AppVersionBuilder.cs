@@ -12,10 +12,13 @@ namespace Lab5Games.Editor
             string bundleVer = PlayerSettings.bundleVersion;
             Debug.Log($"1:{bundleVer}");
 
-            string[] arrVer = bundleVer.Split(',');
+            string[] arrVer = bundleVer.Split('.');
 
             if (arrVer.Length != 3)
+            {
+                Debug.LogWarning($"[AppVersionBuilder] Invalid version format: {bundleVer}");
                 arrVer = new string[] { "0", "0", "0" };
+            }
 
             AppVersion appVer;
             appVer.major = Mathf.Max(0, Convert.ToInt32(arrVer[0]));
