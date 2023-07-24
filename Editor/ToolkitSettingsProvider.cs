@@ -16,7 +16,7 @@ namespace Lab5Games.Editor
         [SettingsProvider]
         static SettingsProvider CreateProvider()
         {
-            return new ToolkitSettingsProvider("Project/Lab5 Games Toolkit", SettingsScope.Project, null);
+            return new ToolkitSettingsProvider("Project/Lab5Games Toolkit", SettingsScope.Project, null);
         }
 
         public ToolkitSettingsProvider(string path, SettingsScope scopes, IEnumerable<string> keywords = null) : base(path, scopes, keywords)
