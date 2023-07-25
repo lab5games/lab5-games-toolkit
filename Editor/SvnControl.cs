@@ -33,7 +33,7 @@ namespace Lab5Games.Editor
         [MenuItem("Assets/Svn Control/Safe Commit", priority = 2)]
         public static void SafeCommit()
         {
-            Update();
+            Update(Path.Combine(Environment.CurrentDirectory, "ProjectSettings/ProjectSettings.asset"));
             Commit();
         }
 
@@ -42,7 +42,7 @@ namespace Lab5Games.Editor
             Process.Start(
                 "TortoiseProc.exe",
                 "/command:update /path:\"" + path + "\"" +
-                " /closeonend:1");
+                " /closeonend:0");
 
             AssetDatabase.Refresh();
 
@@ -57,7 +57,7 @@ namespace Lab5Games.Editor
                 "TortoiseProc.exe",
                 "/command:commit /path:\"" + path + "\"" +
                 " /logmsg \"auto svn commit: " + appVer + "\"" +
-                " /closeonend:1");
+                " /closeonend:0");
 
             Debug.LogWarning("[SvnControl] Finished Commit");
         }
